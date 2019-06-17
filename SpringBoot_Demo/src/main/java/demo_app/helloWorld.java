@@ -1,2 +1,12 @@
+package demo_app;
 
-helloWorld!! 0001
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+@SpringBootApplication
+public class helloWorld  {
+	
+	public static void main(String [] args) {
+		System.out.println("你好 世界 !!");
+		
+		
+	}
+}
