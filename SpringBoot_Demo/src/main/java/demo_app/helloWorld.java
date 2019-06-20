@@ -25,5 +25,7 @@ public class helloWorld  {
 		
 		//		命令行 冲突测试  004
 		
+		System.out.println("第一次提交代码  001 ");
+		//分支合并信息 添加  001
 	}
 }
