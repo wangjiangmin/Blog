@@ -14,6 +14,10 @@ public class helloWorld  {
 		//		eclipse 冲突测试  002
 		//		eclipse 添加信息  冲突测试  101
 		
+		//		eclipse 冲突测试  003
+		//		eclipse 添加信息 冲突测试  201		多文件冲突
+		
+		
 		
 	}
 }
