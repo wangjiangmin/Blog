@@ -22,5 +22,8 @@ public class helloWorld  {
 		//		命令行  添加信息  201   多文件冲突
 
 		//		eclipse 冲突测试  004    图形界面测试
+		
+		//		命令行 冲突测试  004
+		
 	}
 }
