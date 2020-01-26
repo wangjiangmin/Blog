@@ -8,30 +8,84 @@
 	<artifactId>blog_parent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
+	<name>blog_parent</name>
+
+
+
+	<!-- 使用springBoot+myBatisPlus+thymeleaf框架 -->
+
+	<!-- 引入springBoot父工程 -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.0.RELEASE</version>
+	</parent>
+
+	<!-- 只声明依赖 不进行引入 -->
+	<dependencyManagement>
+	</dependencyManagement>
+
+	<!-- 声明并引入依赖 -->
+	<dependencies>
+		<!-- springboot web项目启动器 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!-- tomcat启动器 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<!-- <scope>provided</scope> -->
+		</dependency>
+		<!-- thymeleaf的web启动器 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<!-- 识别jsp jasper是将jsp转化为jvm 能识别的class.java 文件 -->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- 热部署 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+			<scope>true</scope>
+			<!-- optional=true,依赖不会传递，该项目依赖devtools；之后依赖myboot项目的项目如果想要使用devtools，需要重新引入 -->
+		</dependency>
+	</dependencies>
+
+
+
+
+	<!-- 设置jdk版本 -->
+	<properties>
+		<porject.bulid.sourceEncoding>UTF-8</porject.bulid.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<repositories>
+		<!-- 指定从阿里镜像库下载jar包 需要在maven配置中配置阿里中央镜像库 -->
+		<repository>
+			<id>mexus-aliyun</id>
+			<name>nexus-aliyun</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+
 	<modules>
-
-
-		<!-- 设置jdk版本 -->
-		<properties>
-			<porject.bulid.sourceEncoding>UTF-8</porject.bulid.sourceEncoding>
-			<maven.compiler.source>1.8</maven.compiler.source>
-			<maven.compiler.target>1.8</maven.compiler.target>
-		</properties>
-
-		<repositories>
-			<!-- 指定从阿里镜像库下载jar包 需要在maven配置中配置阿里中央镜像库 -->
-			<repository>
-				<id>mexus-aliyun</id>
-				<name>nexus-aliyun</name>
-				<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-				<releases>
-					<enabled>true</enabled>
-				</releases>
-				<snapshots>
-					<enabled>false</enabled>
-				</snapshots>
-			</repository>
-		</repositories>
 		<!-- 博客后台管理系统 -->
 		<module>blog_bms</module>
 
