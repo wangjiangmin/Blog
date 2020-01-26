@@ -1,17 +1,41 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  
-<!--   博客工程项目 -->
-  <groupId>blog_parent</groupId>
-  <artifactId>blog_parent</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <modules>
-  
-<!--   博客后台管理系统 -->
-  	<module>blog_bms</module>
-  	
-<!--   	博客前台显示系统 -->
-  	<module>blog_pms</module>
-  </modules>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- 博客工程父项目 -->
+	<groupId>blog_parent</groupId>
+	<artifactId>blog_parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<modules>
+
+
+		<!-- 设置jdk版本 -->
+		<properties>
+			<porject.bulid.sourceEncoding>UTF-8</porject.bulid.sourceEncoding>
+			<maven.compiler.source>1.8</maven.compiler.source>
+			<maven.compiler.target>1.8</maven.compiler.target>
+		</properties>
+
+		<repositories>
+			<!-- 指定从阿里镜像库下载jar包 需要在maven配置中配置阿里中央镜像库 -->
+			<repository>
+				<id>mexus-aliyun</id>
+				<name>nexus-aliyun</name>
+				<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+				<releases>
+					<enabled>true</enabled>
+				</releases>
+				<snapshots>
+					<enabled>false</enabled>
+				</snapshots>
+			</repository>
+		</repositories>
+		<!-- 博客后台管理系统 -->
+		<module>blog_bms</module>
+
+		<!-- 博客前台显示系统 -->
+		<module>blog_pms</module>
+	</modules>
 </project>
